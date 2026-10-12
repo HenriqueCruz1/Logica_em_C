@@ -12,14 +12,43 @@ int main(){
     float peso;
     float preco;
     float valor_total;
+    float desconto;
     char pedido;
+    float valor_final;
+
+
 
     printf("Bovino(B) ou Frango(F)?");
-    scanf("%c", &pedido);
+    scanf(" %c", &pedido);
 
-    print("Digite o peso da carne: ");
+    printf("Digite o peso da carne: ");
     scanf("%f", &peso);
 
-    printf(pedido);
+    while (peso > 0){
 
+    if (pedido == 'B') {
+    preco = 30;
+
+    if (peso <= 5) {
+        desconto = valor_total * 0.03;
+    } else {
+        desconto = valor_total * 0.05;
+    }
+
+} else if (pedido == 'F') {
+    preco = 15;
+
+    if (peso <= 5) {
+        desconto = valor_total * 0.02;
+    } else {
+        desconto = valor_total * 0.04;
+    }
 }
+
+valor_final = valor_total - desconto;
+
+printf("Valor da compra: R$ %.2f\n", valor_total);
+printf("Desconto: R$ %.2f\n", desconto);
+printf("Valor final: R$ %.2f\n", valor_final);
+
+}}
